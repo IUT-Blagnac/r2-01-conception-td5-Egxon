@@ -1,0 +1,38 @@
+---
+title: Exercice 1 : Diagramme des UC en plantUML ({{ date | date('dddd, MMMM Do') }})
+---
+En vous inspirant du code suivant (pour ne pas démarrer à vide), réalisez un diagramme des UC correspondant au sujet.
+```plantuml
+@startuml td3 
+
+usecase r as "Travailler"
+usecase d as "Gerer les employées"
+usecase e as "Payer"
+usecase f as "Gerer les chantiers"
+usecase a as "Reçevoir un salaire"
+usecase b as "Affecter les employees aux chantier"
+
+
+
+actor employees
+actor Entreprise 
+
+'Pour aligner les 2 acteurs :
+r -[hidden]-> d
+Entreprise -[hidden]-> employees
+Entreprise -[hidden]->d
+employees-[hidden]->a
+Entreprise -[hidden]->b
+
+employees -> r
+Entreprise -> d
+Entreprise ->e
+Entreprise ->f
+Entreprise -> employees
+employees ->a
+Entreprise->b
+
+
+@enduml
+
+```
